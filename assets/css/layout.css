@@ -1,0 +1,276 @@
+/*  RESET --------------------------------------------
+*/
+*:before,
+*:after,
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+/*  LAYOUT | Vertical --------------------------------
+*/
+:root {
+  --app-container-grid-template-rows:
+    auto auto 1fr auto;
+  /* auto auto 1fr minmax(1rem, 7rem) minmax(1rem, 7rem); */
+  --nav-justify-content: start;
+  --nav-border-radius: .25rem .25rem 0 0;
+  --main-margin-block: -1rem 0;
+  --main-margin-inline: 0 0;
+  --main-border-radius: 0 .3rem .3rem .3rem;
+  --tab-grid-auto-flow: column;
+  --sub-header-display: none;
+  --grid-gap: 1rem;
+  --aside-display: none;
+}
+
+
+/*  LAYOUT | Vertical SMALL SCREENS ------------------
+*/
+@media (width <=400px) {
+  :root {
+    --nav-justify-content: auto;
+    --nav-border-radius: .25rem;
+    --tab-grid-auto-flow: column;
+    --main-border-radius: .3rem;
+    /*  */
+  }
+}
+
+
+/*  LAYOUT | Horizontal ------------------------------
+*/
+@media (width >=600px) {
+  :root:has(#toggleLayout:checked) {
+    --app-container-grid-template-columns: 10rem 1fr 15rem;
+    --app-container-grid-template-rows: auto 1fr 1fr auto;
+    --nav-border-radius: .25rem 0 0 .25rem;
+    --nav-justify-content: auto;
+    --main-margin-inline: -1rem 0;
+    --main-margin-block: 0 0;
+    --main-resize-h: horizontal;
+    --main-border-radius: .3rem;
+    --aside-resize-v: vertical;
+    --tab-grid-auto-flow: row;
+    --sub-header-display: grid;
+    --grid-row-span: span 2;
+    --aside-display: grid;
+  }
+}
+
+/*  WRAPPER ----------------------------------
+*/
+app-container {
+  display: grid;
+  grid-template-rows: var(--app-container-grid-template-rows);
+  grid-template-columns: var(--app-container-grid-template-columns);
+  gap: var(--grid-gap);
+  padding: 1rem;
+  height: 100dvh;
+  /*
+doc:
+Push HEADER/FOOTER to the top/bottom of viewport
+Use DVH: https://twitter.com/stackblitz/status/1682403409792495617
+ https://dvh.stackblitz.io/
+ https://stackblitz.com/edit/dvh?file=style.css
+*/
+  overflow: hidden;
+}
+
+/* @media (max-width: 800px) {
+app-container {
+grid-template-rows: auto auto 1fr minmax(1rem, 7rem) minmax(1rem, 7rem);
+grid-template-columns: unset;
+}
+nav > panel-list {
+    grid-auto-flow: column !important;
+}
+main {
+margin: -1rem 0 0 0 !important;
+}
+nav header, aside header, aside-2 header {
+display: none !important;
+}
+} */
+
+
+/*  ALL PANELS ----------------------------------
+*/
+app-container>* {
+  display: grid;
+  background-color: rgba(var(--bg-panel-color),
+      var(--bg-panel-opacity));
+  overflow: hidden;
+  align-content: start;
+}
+
+
+/*  NAV ----------------------------------
+*/
+nav:has(#radio01:checked)~main #tab01,
+nav:has(#radio02:checked)~main #tab02,
+nav:has(#radio03:checked)~main #tab03,
+nav:has(#radio04:checked)~main #tab04,
+nav:has(#radio05:checked)~main #tab05,
+nav:has(#radio06:checked)~main #tab06 {
+  display: grid;
+}
+
+/* rounded corner for MAIN */
+nav:not(:has(#radio01:checked))~main {
+  border-radius: .25rem;
+}
+
+nav {
+  grid-row: var(--grid-row-span);
+  user-select: none;
+  background-color: transparent;
+  justify-content: var(--nav-justify-content);
+}
+
+nav>panel-list {
+  grid-auto-flow: var(--tab-grid-auto-flow);
+}
+
+nav label {
+  grid-template-columns: auto 1fr;
+  border-radius: var(--nav-border-radius);
+}
+
+
+app-logo,
+powered-by,
+app-version,
+demo-buttons {
+  padding: 1rem;
+}
+
+@media (width <=600px) {
+  header label:first-of-type demo-buttons {
+    display: none;
+  }
+}
+
+
+/*  MAIN ----------------------------------
+*/
+main {
+  grid-row: var(--grid-row-span);
+  margin-block: var(--main-margin-block);
+  margin-inline: var(--main-margin-inline);
+  border-radius: var(--main-border-radius);
+  /* resize: var(--main-resize-h); */
+}
+
+
+/*  ASIDE ----------------------------------
+*/
+aside {
+  display: var(--aside-display);
+  border-radius: .3rem;
+}
+
+/* aside {resize: var(--aside-resize-v);} */
+
+
+/*  ASIDE-2 ----------------------------------
+*/
+aside-2 {
+  display: var(--aside-display);
+  border-radius: .3rem;
+}
+
+
+/*  HEADER/FOOTER ----------------------------
+*/
+header,
+footer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column: 1 / -1;
+  user-select: none;
+  border-radius: .3rem;
+}
+
+header {
+  grid-template-columns: 1fr auto auto;
+}
+
+header label {
+  grid-template-columns: auto 1fr;
+}
+
+footer {
+  grid-template-columns: 1fr auto;
+}
+
+
+/*  SUB HEADERS -------------------------------
+*/
+h4 {
+  display: var(--sub-header-display);
+  padding-left: 1rem;
+  letter-spacing: .05rem;
+  /* color: ; */
+}
+
+
+/*  LIST ITEMS ---------------------------------
+*/
+list-item {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+/*  LABELS -------------------------------------
+*/
+label {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+/* AUTO COLUMNS ---------------------------------- */
+
+/* 2 Children
+:where(label, list-item):has(>
+:last-child:nth-child(2)) {
+  grid-template-columns: auto 1fr;
+} */
+
+/* 3 Children
+:where(label, list-item):has(>
+:last-child:nth-child(3)) {
+  grid-template-columns: 1fr auto auto;
+} */
+
+/* 4 Children
+:where(label, list-item):has(> :last-child:nth-child(4)) {
+  grid-template-columns: auto 1fr auto auto;
+} */
+
+
+/* TABS ---------------------------------- */
+panel-tab {
+  overflow: hidden;
+  display: none;
+}
+
+/* LOW LEVEL ELEMENTS ---------------------------------- */
+
+/* Scrollable */
+panel-list {
+  display: grid;
+  overflow: overlay;
+  position: relative;
+}
+
+list-cell {padding: .5rem 1rem;}
+
+p {padding: 0 1rem;}
