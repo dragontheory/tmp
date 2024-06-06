@@ -149,7 +149,8 @@ app-logo,
 powered-by,
 app-version,
 demo-buttons {
-  padding: 1rem;
+  padding-block: .5rem;
+  padding-inline: 1rem;
 }
 
 app-logo {
