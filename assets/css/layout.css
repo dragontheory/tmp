@@ -152,6 +152,10 @@ demo-buttons {
   padding: 1rem;
 }
 
+app-logo {
+  max-width: 10rem;
+}
+
 @media (width <=600px) {
   header label:first-of-type demo-buttons {
     display: none;
