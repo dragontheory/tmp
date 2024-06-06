@@ -89,7 +89,7 @@ app-container {
 grid-template-rows: auto auto 1fr minmax(1rem, 7rem) minmax(1rem, 7rem);
 grid-template-columns: unset;
 }
-nav > panel-list {
+nav > section {
     grid-auto-flow: column !important;
 }
 main {
@@ -135,7 +135,7 @@ nav {
   justify-content: var(--nav-justify-content);
 }
 
-nav>panel-list {
+nav>section {
   grid-auto-flow: var(--tab-grid-auto-flow);
 }
 
@@ -269,7 +269,7 @@ article {
 /* LOW LEVEL ELEMENTS ---------------------------------- */
 
 /* Scrollable */
-panel-list {
+section {
   display: grid;
   overflow: overlay;
   position: relative;

@@ -98,7 +98,7 @@ demo-buttons {cursor: pointer;}
 /* LOW LEVEL ELEMENTS ---------------------------------- */
 
 /* Scrollable */
-panel-list {
+section {
   background:
     /* cover */
     linear-gradient(var(--bg-panel-color) 33%,
@@ -204,11 +204,11 @@ html:after {
   /* FIREFOX */
   /* Target elements, not :root{} */
   /* https://codeconvey.com/custom-scrollbar-css-for-all-browsers/ */
-  panel-list {
+  section {
     scrollbar-color: rgba(48,190,255,0.0) rgba(48,190,255,0.0); /* Thumb and track color */
     scrollbar-width: thin; /* Track width */
   }
-  panel-list:hover {scrollbar-color: rgba(48,190,255,0.3) rgba(48,190,255,0.0);}
+  section:hover {scrollbar-color: rgba(48,190,255,0.3) rgba(48,190,255,0.0);}
 
 
 
@@ -249,7 +249,7 @@ span-bold {font-weight: 900;}
 
 iframe {background-color: transparent;}
 
-panel-list div {overflow: auto;}
+section div {overflow: auto;}
 
 iframe section article img {
   mix-blend-mode: multiply;
