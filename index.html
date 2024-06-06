@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="D7460N">
     <meta name="description" content="Modern HTML5/CSS3 front-end template">
-    <meta name="robots" content="index, archive">
     <meta name="color-scheme" content="dark light">
-    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+    <meta name="robots" content="index, archive">
+    <meta name="author" content="D7460N">
     <link rel="canonical" href="https://d7460n.dev/">
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logos/logo.svg">
     <!-- "Essential" - will be inline for immediate affect without ping -->
     <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
     <link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
@@ -22,7 +22,17 @@
   <body>
     <app-container>
       <header>
-        <app-logo>D7460N Template</app-logo>
+        <app-logo>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" role="img">
+            <title>A gradient</title>
+            <linearGradient id="gradient">
+              <stop class="begin" offset="0%" stop-color="red" />
+              <stop class="end" offset="100%" stop-color="black" />
+            </linearGradient>
+            <rect x="0" y="0" width="100" height="100" style="fill:url(#gradient)" />
+            <circle cx="50" cy="50" r="30" style="fill:url(#gradient)" />
+          </svg>
+        </app-logo>
         <label for="toggleLayout">
           <input type="checkbox" id="toggleLayout" checked />
           <demo-buttons>Layouts</demo-buttons>
@@ -80,48 +90,43 @@
           <p>Tab02</p>
           <p>Modern HTML, CSS, web design/development</p>
           <panel-list>
-            <a class="twitter-timeline loading"
-               data-theme="dark"
-               data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
-               href="https://twitter.com/dragontheory/lists/web?ref_src=twsrc%5Etfw"></a>
+            <a class="twitter-timeline loading" data-theme="dark"
+              data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
+              href="https://twitter.com/dragontheory/lists/web?ref_src=twsrc%5Etfw"></a>
           </panel-list>
         </panel-tab>
         <panel-tab id="tab03">
           <p>All things web design/development</p>
           <panel-list>
 
-          <a class="twitter-timeline loading"
-             data-theme="dark"
-             data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
-             href="https://twitter.com/alienlebarge/lists/web-dev?ref_src=twsrc%5Etfw"></a>
+            <a class="twitter-timeline loading" data-theme="dark"
+              data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
+              href="https://twitter.com/alienlebarge/lists/web-dev?ref_src=twsrc%5Etfw"></a>
 
           </panel-list>
         </panel-tab>
         <panel-tab id="tab04">
           <p>All things Second Amendment</p>
           <panel-list>
-            <a class="twitter-timeline"
-               data-theme="dark"
-               data-chrome="noborders, noscrollbar, transparent, noheader, nofooter" href="https://twitter.com/dragontheory/lists/1668054846845362180?ref_src=twsrc%5Etfw"></a>
+            <a class="twitter-timeline" data-theme="dark"
+              data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
+              href="https://twitter.com/dragontheory/lists/1668054846845362180?ref_src=twsrc%5Etfw"></a>
           </panel-list>
         </panel-tab>
         <panel-tab id="tab05">
           <p>All things JESUS, the Bible, and our origins</p>
           <panel-list>
-            <a class="twitter-timeline loading"
-               data-theme="dark"
-               data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
-
-             href="https://twitter.com/dragontheory/lists/god?ref_src=twsrc%5Etfw"></a>
+            <a class="twitter-timeline loading" data-theme="dark"
+              data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
+              href="https://twitter.com/dragontheory/lists/god?ref_src=twsrc%5Etfw"></a>
           </panel-list>
         </panel-tab>
         <panel-tab id="tab06">
           <p>All things politics</p>
           <panel-list>
-            <a class="twitter-timeline loading" 
-               data-theme="dark" 
-               data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
-               href="https://twitter.com/dragontheory/lists/1443917294070079511?ref_src=twsrc%5Etfw"></a>
+            <a class="twitter-timeline loading" data-theme="dark"
+              data-chrome="noborders, noscrollbar, transparent, noheader, nofooter"
+              href="https://twitter.com/dragontheory/lists/1443917294070079511?ref_src=twsrc%5Etfw"></a>
           </panel-list>
         </panel-tab>
       </main>
@@ -129,10 +134,18 @@
         <h4>Sources</h4>
         <panel-list>
           <p>Sticky header/scrollable content (no js).</p>
-          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-          <p>Adipiscing enim eu turpis egestas pretium aenean. Posuere morbi leo urna molestie at elementum eu facilisis. Aenean et tortor at risus viverra adipiscing at in. Egestas sed tempus urna et pharetra pharetra massa.</p>
-          <p>ASIDE content. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-          <p>Adipiscing enim eu turpis egestas pretium aenean. Posuere morbi leo urna molestie at elementum eu facilisis. Aenean et tortor at risus viverra adipiscing at in. Egestas sed tempus urna et pharetra pharetra massa.</p>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
+            form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a
+            placeholder before final copy is available.</p>
+          <p>Adipiscing enim eu turpis egestas pretium aenean. Posuere morbi leo urna molestie at elementum eu
+            facilisis. Aenean et tortor at risus viverra adipiscing at in. Egestas sed tempus urna et pharetra pharetra
+            massa.</p>
+          <p>ASIDE content. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
+            demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum
+            may be used as a placeholder before final copy is available.</p>
+          <p>Adipiscing enim eu turpis egestas pretium aenean. Posuere morbi leo urna molestie at elementum eu
+            facilisis. Aenean et tortor at risus viverra adipiscing at in. Egestas sed tempus urna et pharetra pharetra
+            massa.</p>
         </panel-list>
       </aside>
       <aside-2>
