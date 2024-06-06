@@ -199,6 +199,7 @@ footer {
   display: grid;
   grid-auto-flow: column;
   grid-column: 1 / -1;
+  align-items: center;
   user-select: none;
   border-radius: .3rem;
 }
